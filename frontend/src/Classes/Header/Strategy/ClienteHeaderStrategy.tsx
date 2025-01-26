@@ -50,7 +50,7 @@ class ClienteHeaderStrategy implements HeaderStrategy {
           <Navbar.Brand href="/#/">
             <img
               src="logo.png"
-              width="35"
+              width="47"
               height="35"
               className="d-inline-block align-top"
             />

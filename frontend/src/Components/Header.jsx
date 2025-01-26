@@ -68,7 +68,7 @@ function Header() {
             <Navbar.Brand href="/#/">
               <img
                 src="logo.png"
-                width="35"
+                width="47"
                 height="35"
                 className="d-inline-block align-top"
               />
@@ -153,7 +153,7 @@ function Header() {
             <Navbar.Brand>
               <img
                 src="logo.png"
-                width="35"
+                width="47"
                 height="35"
                 className="d-inline-block align-top"
               />
@@ -219,7 +219,7 @@ function Header() {
             <Navbar.Brand href="/#/">
               <img
                 src="logo.png"
-                width="35"
+                width="47"
                 height="35"
                 className="d-inline-block align-top"
               />
