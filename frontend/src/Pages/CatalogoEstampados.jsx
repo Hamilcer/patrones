@@ -65,17 +65,20 @@ function CatalogoEstampados() {
         <Row className="width-100vw">
           <Col xs={{ span: 8, offset: 2 }}>
             <Row width="100%" className=" p-5">
-              <Col className="centered" width="80%">
-                <img src="/logo.png" alt="" />
+              <Col className="centered" width="80%" >
+                <img src="/logo.png" alt="" width="500px" />
               </Col>
               <Col>
                 <br />
                 <br />
-                <h1>Estampa Tu Idea</h1>
                 <br />
-                <h3>Los mejores precios!</h3>
                 <br />
-                <h5>Tu página de confianza</h5>
+                <br />
+                <h1>Te damos la bienvenida</h1>
+                <br />
+                <h3>Materiales y servicios eléctricos</h3>
+                <br />
+                
               </Col>
             </Row>
           </Col>

@@ -1,7 +1,7 @@
-import Contenedor from "./Contenedor";
+import Producto from "./Producto";
 
 abstract class Creador {
-  abstract crearContenedor(): Contenedor;
+  abstract crearProducto(): Producto;
 }
 
 export default Creador;

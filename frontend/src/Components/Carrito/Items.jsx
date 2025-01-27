@@ -31,47 +31,47 @@ function Items(prop) {
     let cantidad = document.querySelector("#cantidad" + posicion).value;
     let material = prop.itemData[posicion].material;
     let limite;
-    try {
-      const res = await fetch(
-        `http://localhost:4000/materialQuantity/${material}`
-      );
-      if (res.ok) {
-        const data = await res.json();
-        limite = Number(data.cantidad) + Number(prop.itemData[posicion].cantidad);
-      } else {
-        console.log("Sucedio un error buscando el material");
-        limite = -1;
-      }
-    } catch (error) {
-      console.error(error);
-    }
-    if (limite == 0) {
-      setShowAlert(true);
-      setAlertText("Ya no queda este material");
-      setAlertState("danger");
-    } else if (!cantidad || cantidad <= 0 || cantidad > limite) {
-      setShowAlert(true);
-      setAlertText("La cantidad debe estar entre 1 y " + limite);
-      setAlertState("danger");
-    } else {
-      restarCantidad(material, cantidad - prop.itemData[posicion].cantidad);
+    // try {
+    //   const res = await fetch(
+    //     `http://localhost:4000/materialQuantity/${material}`
+    //   );
+    //   if (res.ok) {
+    //     const data = await res.json();
+    //     limite = Number(data.cantidad) + Number(prop.itemData[posicion].cantidad);
+    //   } else {
+    //     console.log("Sucedio un error buscando el material");
+    //     limite = -1;
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    // }
+    // if (limite == 0) {
+    //   setShowAlert(true);
+    //   setAlertText("Ya no queda este material");
+    //   setAlertState("danger");
+    // } else if (!cantidad || cantidad <= 0 || cantidad > limite) {
+    //   setShowAlert(true);
+    //   setAlertText("La cantidad debe estar entre 1 y " + limite);
+    //   setAlertState("danger");
+    // } else {
+      // restarCantidad(material, cantidad - prop.itemData[posicion].cantidad);
       prop.itemData[posicion].cantidad = cantidad;
       localStorage.setItem("itemData", JSON.stringify(prop.itemData));
 
       window.location.reload();
-    }
+    // }
   };
 
-  const restarCantidad = async (material, cantidad) => {
-    fetch("http://localhost:4000/updateQuantity", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        material: material,
-        cantidad: cantidad,
-      }),
-    });
-  };
+  // const restarCantidad = async (material, cantidad) => {
+  //   fetch("http://localhost:4000/updateQuantity", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({
+  //       material: material,
+  //       cantidad: cantidad,
+  //     }),
+  //   });
+  // };
 
   return (
     <Carousel className=" text-center" interval={null}>
