@@ -61,13 +61,13 @@ const Pago: React.FC = () => {
         email: localStorage.getItem("email") || "",
       })
     );
-    invocador.agregarComando(
-      new ComandoCrearCamisa(
-        agregarNumeroPorMaterial(
-          JSON.parse(localStorage.getItem("itemData") || "[]")
-        )
-      )
-    );
+    // invocador.agregarComando(
+    //   new ComandoCrearCamisa(
+    //     agregarNumeroPorMaterial(
+    //       JSON.parse(localStorage.getItem("itemData") || "[]")
+    //     )
+    //   )
+    // );
 
     // Se ejecutan los comandos y se espera a que se resuelvan
     await invocador.ejecutarComandos();

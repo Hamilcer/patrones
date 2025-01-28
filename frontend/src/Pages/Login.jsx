@@ -141,7 +141,7 @@ function Login() {
           {alertText}
         </Alert>
       <div className="text-center content">
-        <h1>Estampa Tu Idea</h1>
+        <h1>CMC Energy</h1>
         <Form.Group className="mb-5 mt-5" controlId="formBasicTipo">
           <Image src="/logo.png" fluid width="50%" />
         </Form.Group>

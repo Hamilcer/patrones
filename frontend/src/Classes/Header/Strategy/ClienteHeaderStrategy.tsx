@@ -54,7 +54,7 @@ class ClienteHeaderStrategy implements HeaderStrategy {
               height="35"
               className="d-inline-block align-top"
             />
-            Estampa tu idea
+            CMC Energy
           </Navbar.Brand>
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-md`}
