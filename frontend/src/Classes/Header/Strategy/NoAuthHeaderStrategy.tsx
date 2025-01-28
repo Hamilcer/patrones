@@ -58,7 +58,7 @@ class NoAuthHeaderStrategy implements HeaderStrategy {
                   to="/catalogoEstampado"
                   active={location.pathname === "/catalogoEstampado"}
                 >
-                  <FontAwesomeIcon icon={faStar} /> Estampados
+                  <FontAwesomeIcon icon={faStar} /> Servicios
                 </Nav.Link>
               </Nav.Item>
               <NavDropdown

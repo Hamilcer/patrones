@@ -51,7 +51,7 @@ function Registro() {
         setLoading(false);
       } else {
         cliente.email = emailAdapter.convertirEmailAMinuscula(cliente.email);
-        if (cliente.tipoCliente == "Artista") {
+        if (cliente.tipoCliente == "Administrador") {
           const response = await fetch("http://localhost:4000/artists", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -135,7 +135,7 @@ function Registro() {
             >
               <option value="">Tipo de registro</option>
               <option value="Cliente">Cliente</option>
-              <option value="Artista">Artista</option>
+              <option value="Administrador">Administrador</option>
             </Form.Select>
             <Form.Text>¿Bajo qué rol deseas registrate?.</Form.Text>
           </Form.Group>

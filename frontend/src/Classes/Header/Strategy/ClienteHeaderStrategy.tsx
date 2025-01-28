@@ -67,13 +67,13 @@ class ClienteHeaderStrategy implements HeaderStrategy {
                 className="justify-content-end flex-grow-1 pe-3"
               >
                 <Nav.Item>
-                  <Nav.Link>
+                  {/* <Nav.Link>
                     🤑 Dinero:{" "}
                     {this.currencyFormatter({
                       currency: "USD",
                       value: this.value,
                     })}
-                  </Nav.Link>
+                  </Nav.Link> */}
                 </Nav.Item>
 
                 <Nav.Item>
@@ -92,7 +92,7 @@ class ClienteHeaderStrategy implements HeaderStrategy {
                     to="/catalogoEstampado"
                     active={location.pathname === "/catalogoEstampado"}
                   >
-                    <FontAwesomeIcon icon={faStar} /> Estampados
+                    <FontAwesomeIcon icon={faStar} /> Servicios
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>

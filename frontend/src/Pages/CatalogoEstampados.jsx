@@ -85,13 +85,13 @@ function CatalogoEstampados() {
         </Row>
 
         <div className="align-self-start ps-5 pt-5">
-          <h1>Estampados: </h1>
+          <h1>Servicios: </h1>
         </div>
         <Row className="align-items-center">
           {estampados.length > 0 ? (
             Cartas
           ) : (
-            <p className="h2">No hay estampados disponibles</p>
+            <p className="h2">No hay servicios disponibles</p>
           )}{" "}
         </Row>
 

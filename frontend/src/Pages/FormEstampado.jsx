@@ -20,7 +20,7 @@ export default function FormEstampado() {
     setFile(selectedFile);
   };
 
-  const [estampado, setEstampado] = useState({
+  const [servicio, setServicio] = useState({
     diseño: "",
     nombre: "",
     categoria: "",
@@ -28,10 +28,10 @@ export default function FormEstampado() {
   });
 
   const estampadoChange = (e) => {
-    setEstampado({ ...estampado, [e.target.name]: e.target.value });
+    setServicio({ ...servicio, [e.target.name]: e.target.value });
   };
   const handleSelect = (e) => {
-    setEstampado({ ...estampado, categoria: e.target.value });
+    setServicio({ ...servicio, categoria: e.target.value });
   };
 
   const handleSubmit = (e) => {
@@ -53,7 +53,7 @@ export default function FormEstampado() {
         })
         .then((data) => {
           // Handle the file path returned from the server
-          setEstampado({ ...estampado, diseño: data.filePath });
+          setServicio({ ...servicio, diseño: data.filePath });
         })
         .catch((error) => {
           // Handle errors
@@ -63,78 +63,97 @@ export default function FormEstampado() {
   };
 
   useEffect(() => {
-    if (estampado.diseño !== "") {
+    if (servicio.diseño !== "") {
       toDB();
     }
-  }, [estampado.diseño]);
+  }, [servicio.diseño]);
 
   const toDB = () => {
     fetch("http://localhost:4000/estampado", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(estampado),
+      body: JSON.stringify(servicio),
     });
     setTimeout(() => navigate("/catalogoEstampado"), 200);
   };
 
   return (
     <>
-      <Header />
-      <Container>
-        <Form onSubmit={handleSubmit}>
-          <Row className="d-flex justify-content-around mt-5 pt-5">
-            <Col className="recuadro bordered p-5" md={{ span: 6, offset: 4 }}>
-              <h2 className="text-center mb-5">Publica tu estampado</h2>
-              <Form.Group controlId="formFile" className="mb-3">
-                <Form.Label>Publica tu estampado</Form.Label>
-                <Form.Control type="file" onChange={handleFileChange} />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <Form.Control
-                  type="text"
-                  name="nombre"
-                  placeholder="nombre"
-                  onChange={estampadoChange}
-                  value={estampado.nombre}
-                  maxLength={20}
-                />
-                <Form.Text>Ponle un nombre unico a tu estampado</Form.Text>
-              </Form.Group>
+  <Header />
+  <Container>
+    <Form onSubmit={handleSubmit}>
+      <Row className="d-flex justify-content-around mt-5 pt-5">
+        <Col className="recuadro bordered p-5" md={{ span: 6, offset: 4 }}>
+          <h2 className="text-center mb-5">Publica tu servicio</h2>
 
-              <Form.Group className="mb-3" controlId="Categoria">
-                <Form.Select
-                  aria-label="Default select example"
-                  onChange={handleSelect}
-                  data-testid="Categoria"
-                >
-                  <option value="">Categoria</option>
-                  <option value="Abstracto">Abstracto</option>
-                  <option value="Naturales">Naturales</option>
-                  <option value="Retro">Retro</option>
-                  <option value="Tematicos">Temáticos</option>
-                  <option value="Otro">Otro</option>
-                </Form.Select>
-                <Form.Text>
-                  Con que categoria crees que se identifica tu estampado?
-                </Form.Text>
-              </Form.Group>
-              <div className="d-grid ">
-                <Button
-                  variant="outline-light"
-                  type="submit"
-                  className="ms-3 d-grid"
-                  size="md"
-                  disabled={!file || !estampado.nombre || !estampado.categoria}
-                >
-                  Publicar
-                </Button>
-              </div>
-            </Col>
-          </Row>
-        </Form>
-      </Container>
-      <ThemeSwitcher />
-      <Footer />
-    </>
+          {/* Campo para subir el archivo */}
+          <Form.Group controlId="formFile" className="mb-3">
+            <Form.Label>Publica tu servicio</Form.Label>
+            <Form.Control type="file" onChange={handleFileChange} />
+          </Form.Group>
+
+          {/* Campo para el nombre */}
+          <Form.Group className="mb-3">
+            <Form.Control
+              type="text"
+              name="nombre"
+              placeholder="Nombre"
+              onChange={estampadoChange}
+              value={servicio.nombre}
+              maxLength={20}
+            />
+            <Form.Text>Nombre del servicio</Form.Text>
+          </Form.Group>
+
+          {/* Campo para la categoría */}
+          <Form.Group className="mb-3" controlId="Categoria">
+            <Form.Select
+              aria-label="Default select example"
+              onChange={handleSelect}
+              data-testid="Categoria"
+            >
+              <option value="">Categoria</option>
+              <option value="Obras Civiles">Obras Civiles</option>
+              <option value="Servicios Eléctricos">Servicios Eléctricos</option>
+              <option value="Diseños Eléctricos y Solicitudes">Diseños Eléctricos y Solicitudes</option>
+              <option value="Sistema Solar Fotovoltaico">Sistema Solar Fotovoltaico</option>
+            </Form.Select>
+            <Form.Text>
+              ¿Con qué categoría crees que se identifica tu servicio?
+            </Form.Text>
+          </Form.Group>
+
+          {/* Nuevo campo para la descripción */}
+          <Form.Group className="mb-3">
+            <Form.Control
+              as="textarea"
+              name="descripcion"
+              placeholder="Descripción"
+              onChange={estampadoChange}
+              value={servicio.descripcion}
+              rows={4} // Número de filas para el textarea
+            />
+            <Form.Text>Describe tu servicio en detalle</Form.Text>
+          </Form.Group>
+
+          {/* Botón de envío */}
+          <div className="d-grid">
+            <Button
+              variant="outline-light"
+              type="submit"
+              className="ms-3 d-grid"
+              size="md"
+              disabled={!file || !servicio.nombre || !servicio.categoria}
+            >
+              Publicar
+            </Button>
+          </div>
+        </Col>
+      </Row>
+    </Form>
+  </Container>
+  <ThemeSwitcher />
+  <Footer />
+</>
   );
 }

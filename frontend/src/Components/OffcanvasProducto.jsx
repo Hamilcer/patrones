@@ -68,10 +68,10 @@ function OffcanvasProducto() {
     //   setShowAlert(fachada.cambioMostrarAlerta());
     //   setAlertText("Elige un material");
     //   setAlertState(fachada.cambioEstadoDeAlerta(1));
-    // } else if (!cantidad || cantidad <= 0 ){// || cantidad > limite) {
-    //   setShowAlert(fachada.cambioMostrarAlerta());
-    //   setAlertText("La cantidad debe estar entre 1 y " + limite);
-    //   setAlertState(fachada.cambioEstadoDeAlerta(1));
+    } else if (!cantidad || cantidad <= 0 ){// || cantidad > limite) {
+      setShowAlert(fachada.cambioMostrarAlerta());
+      setAlertText("La cantidad debe ser mayor a 0");
+      setAlertState(fachada.cambioEstadoDeAlerta(1));
     } else {
         let order = {
           cantidad,

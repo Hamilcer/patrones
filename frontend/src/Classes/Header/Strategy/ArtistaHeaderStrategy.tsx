@@ -47,7 +47,7 @@ class ArtistaHeaderStrategy implements HeaderStrategy {
               className="justify-content-end flex-grow-1 pe-3"
             >
               <Nav.Item>
-                <Nav.Link>{"😎 Artista: " + localStorage.username}</Nav.Link>
+                <Nav.Link>{"Administrador: " + localStorage.username}</Nav.Link>
               </Nav.Item>
 
               <Nav.Item>
@@ -56,7 +56,7 @@ class ArtistaHeaderStrategy implements HeaderStrategy {
                   to="/catalogoEstampado"
                   active={location.pathname === "/catalogoEstampado"}
                 >
-                  <FontAwesomeIcon icon={faStar} /> Estampados
+                  <FontAwesomeIcon icon={faStar} /> Servicios
                 </Nav.Link>
               </Nav.Item>
 
@@ -66,7 +66,7 @@ class ArtistaHeaderStrategy implements HeaderStrategy {
                   to="/formEstampado"
                   active={location.pathname === "/formEstampado"}
                 >
-                  <FontAwesomeIcon icon={faStar} /> Publicar estampados
+                  <FontAwesomeIcon icon={faStar} /> Publicar servicios
                 </Nav.Link>
               </Nav.Item>
 

@@ -49,29 +49,30 @@ function Items(prop) {
     //   setShowAlert(true);
     //   setAlertText("Ya no queda este material");
     //   setAlertState("danger");
-    // } else if (!cantidad || cantidad <= 0 || cantidad > limite) {
-    //   setShowAlert(true);
-    //   setAlertText("La cantidad debe estar entre 1 y " + limite);
-    //   setAlertState("danger");
-    // } else {
+    // } else
+    if (cantidad <= 0) {
+      setShowAlert(true);
+      setAlertText("La cantidad debe ser mayor a 0");
+      setAlertState("danger");
+    } else {
       // restarCantidad(material, cantidad - prop.itemData[posicion].cantidad);
       prop.itemData[posicion].cantidad = cantidad;
       localStorage.setItem("itemData", JSON.stringify(prop.itemData));
 
       window.location.reload();
-    // }
+    }
   };
 
-  // const restarCantidad = async (material, cantidad) => {
-  //   fetch("http://localhost:4000/updateQuantity", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({
-  //       material: material,
-  //       cantidad: cantidad,
-  //     }),
-  //   });
-  // };
+  const restarCantidad = async (material, cantidad) => {
+    fetch("http://localhost:4000/updateQuantity", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        material: material,
+        cantidad: cantidad,
+      }),
+    });
+  };
 
   return (
     <Carousel className=" text-center" interval={null}>

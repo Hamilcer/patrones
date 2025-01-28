@@ -33,7 +33,7 @@ const router = createBrowserRouter(
         <Route path="carrito" element={<Carrito />} />
       </Route>
 
-      <Route path="/" element={<ProtectedRoutes rolAutorizado="Artista" />}>
+      <Route path="/" element={<ProtectedRoutes rolAutorizado="Administrador" />}>
         <Route path="formEstampado" element={<FormEstampado />} />
       </Route>
     </>

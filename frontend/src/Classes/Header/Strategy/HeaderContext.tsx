@@ -21,7 +21,7 @@ class HeaderContext {
 
     if (isUserAuthenticated && tipoCliente == "Cliente") {
       this.setStrategy(new ClienteHeaderStrategy());
-    } else if (isUserAuthenticated && tipoCliente == "Artista") {
+    } else if (isUserAuthenticated && tipoCliente == "Administrador") {
       this.setStrategy(new ArtistaHeaderStrategy());
     } else {
       this.setStrategy(new NoAuthHeaderStrategy());

@@ -57,14 +57,14 @@ function OffcanvasEstampado() {
   return (
     <Offcanvas show={show2} onHide={handleClose1} placement="start">
       <Offcanvas.Header closeButton>
-        <Offcanvas.Title>Selecciona tu estampado</Offcanvas.Title>
+        <Offcanvas.Title>Selecciona tu servicio</Offcanvas.Title>
       </Offcanvas.Header>
 
       <Offcanvas.Body className=" centered-items text-center">
         {CartaEstampado.length > 0 ? (
           CartaEstampado
         ) : (
-          <p className="h2">No hay estampados disponibles</p>
+          <p className="h2">No hay servicios disponibles</p>
         )}
         <br />
       </Offcanvas.Body>

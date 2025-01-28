@@ -3,7 +3,7 @@ import path from "path";
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "../frontend/public/Estampados"); // Define the destination folder for uploads
+    cb(null, "../frontend/public/Servicios"); // Define the destination folder for uploads
   },
   filename: (req, file, cb) => {
     cb(
@@ -24,7 +24,7 @@ export const saveImage = async  (req, res) => {
     }
 
     if (req.file) {
-      const filePath = `Estampados/${req.file.filename}`;
+      const filePath = `Servicios/${req.file.filename}`;
       return res.status(200).json({ filePath }); // Sending the path as JSON response
     }
 

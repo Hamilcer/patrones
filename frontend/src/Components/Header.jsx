@@ -114,7 +114,7 @@ function Header() {
                       to="/catalogoEstampado"
                       active={location.pathname === "/catalogoEstampado"}
                     >
-                      <FontAwesomeIcon icon={faStar} /> Estampados
+                      <FontAwesomeIcon icon={faStar} /> Servicios
                     </Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
@@ -139,7 +139,7 @@ function Header() {
       );
     } else if (
       isUserAuthenticated &&
-      localStorage.getItem("tipoDeCliente") == "Artista"
+      localStorage.getItem("tipoDeCliente") == "Administrador"
     ) {
       return (
         <>
@@ -171,7 +171,7 @@ function Header() {
                 >
                   <Nav.Item>
                     <Nav.Link>
-                      {"😎 Artista: " + localStorage.username}
+                      {"Administrador: " + localStorage.username}
                     </Nav.Link>
                   </Nav.Item>
 
@@ -181,7 +181,7 @@ function Header() {
                       to="/catalogoEstampado"
                       active={location.pathname === "/catalogoEstampado"}
                     >
-                      <FontAwesomeIcon icon={faStar} /> Estampados
+                      <FontAwesomeIcon icon={faStar} /> Servicios
                     </Nav.Link>
                   </Nav.Item>
 
@@ -250,7 +250,7 @@ function Header() {
                       to="/catalogoEstampado"
                       active={location.pathname === "/catalogoEstampado"}
                     >
-                      <FontAwesomeIcon icon={faStar} /> Estampados
+                      <FontAwesomeIcon icon={faStar} /> Servicios
                     </Nav.Link>
                   </Nav.Item>
                   <NavDropdown

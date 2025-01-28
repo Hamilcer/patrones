@@ -1,15 +1,15 @@
 function Pluralidad(prop) {
 
     const pluralizacion = () =>{
-        return prop.data.cantidad > 1 ? 's camisas':' camisa';
+        return prop.data.cantidad > 1 ? ' los productos':'l producto';
     }
 
     const plural = () => {
         return (
           <>
-            <h3 className="text-light">Informacion de la{pluralizacion()}</h3>
+            <h3 className="text-light">Información de{pluralizacion()}</h3>
             <br />
-            <p className="text-light">Talla de la{pluralizacion()}: {prop.data.talla}</p>
+            {/* <p className="text-light">Talla de la{pluralizacion()}: {prop.data.talla}</p> */}
           </>
         );
       };
@@ -19,7 +19,7 @@ function Pluralidad(prop) {
       {plural()}
       <p className="text-light">{prop.data.text}</p>
       <p className="text-light">Precio: {prop.data.price}</p>
-      <p className="text-light">Material: {prop.data.material}</p>
+      {/* <p className="text-light">Material: {prop.data.material}</p> */}
       <br />
     </div>
   );

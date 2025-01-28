@@ -110,7 +110,7 @@ function Contenido() {
     return (
       <>
         <div>
-          <h1>No hay nada en el carrito :(</h1>
+          <h1>¡Vaya! Parece que tu carrito está vacío 🛒. <a href="/">¡Descubre nuestras increíbles ofertas aquí!</a> 🎉</h1>        
         </div>
       </>
     );
