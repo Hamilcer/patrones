@@ -100,7 +100,7 @@ export default function FormEstampado() {
               placeholder="Nombre"
               onChange={estampadoChange}
               value={servicio.nombre}
-              maxLength={20}
+              maxLength={100}
             />
             <Form.Text>Nombre del servicio</Form.Text>
           </Form.Group>

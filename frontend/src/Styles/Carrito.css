@@ -9,94 +9,103 @@
   top: 55%;
   left: 75%;
   transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Borde semi-transparente */
+  padding: 20px; /* Más padding para mejor espaciado */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: rgba(62, 74, 188, 0.985); /* Fondo semi-transparente */
+  backdrop-filter: blur(5px); /* Efecto de desenfoque */
+  color: white; /* Texto blanco */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+}
 
-  border: white 1px solid;
-  padding: 10px;
+.carousel-caption:hover {
+  background-color: rgb(34, 51, 198); /* Fondo más oscuro al pasar el mouse */
+  transform: translate(-50%, -50%) scale(1.05); /* Efecto de zoom al pasar el mouse */
 }
 
 .carousel-item img {
   margin-right: 200px;
-  /* Example: move the image 100px to the right */
+  border-radius: 10px; /* Bordes redondeados para la imagen */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para la imagen */
 }
 
 .carousel {
   width: 100%;
   height: 512px;
+  overflow: hidden; /* Evita desbordamientos */
+  border-radius: 15px; /* Bordes redondeados para el carrusel */
 }
 
-[data-bs-theme=light] .carousel .carousel-control-next-icon,
-[data-bs-theme=light] .carousel .carousel-control-prev-icon,
-[data-bs-theme=light].carousel .carousel-control-next-icon,
-[data-bs-theme=light].carousel .carousel-control-prev-icon {
-  filter: invert(1) grayscale(100);
+/* Estilos para los botones de control del carrusel (anterior y siguiente) */
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #49424044; /* Color de fondo naranja */
+  border-radius: 50%; /* Botones redondos */
+  width: 50px; /* Ancho */
+  height: 50px; /* Alto */
+  top: 50%; /* Centrar verticalmente */
+  transform: translateY(-50%);
+  opacity: 0.8; /* Ligera transparencia */
+  transition: opacity 0.3s ease, background-color 0.3s ease; /* Transición suave */
 }
 
-[data-bs-theme=dark] .carousel .carousel-control-next-icon,
-[data-bs-theme=dark] .carousel .carousel-control-prev-icon,
-[data-bs-theme=dark].carousel .carousel-control-next-icon,
-[data-bs-theme=dark].carousel .carousel-control-prev-icon {
-  filter: invert(0) grayscale(100);
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color:  rgba(34, 50, 198, 0.396); /* Color de fondo más oscuro al pasar el mouse */
+  opacity: 1; /* Sin transparencia al pasar el mouse */
 }
 
-[data-bs-theme=dark] .carousel .carousel-indicators [data-bs-target],
-[data-bs-theme=dark].carousel .carousel-indicators [data-bs-target] {
-  background-color: gray;
+/* Estilos para los íconos dentro de los botones de control */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1); /* Invertir el color del ícono para que sea visible */
 }
 
-[data-bs-theme=light] .carousel .carousel-indicators [data-bs-target],
-[data-bs-theme=light].carousel .carousel-indicators [data-bs-target] {
-  background-color: black;
+/* Estilos para los indicadores del carrusel */
+.carousel-indicators [data-bs-target] {
+  background-color: rgba(34, 50, 198, 0.396);; /* Color de fondo naranja */
+  border-radius: 50%; /* Indicadores redondos */
+  width: 12px; /* Ancho */
+  height: 12px; /* Alto */
+  margin: 0 5px; /* Espaciado entre indicadores */
+  transition: background-color 0.3s ease; /* Transición suave */
 }
 
-.custom-imge {
-  margin-top: 5%;
-  width: 35%;
-  height: 380px;
-  object-fit: cover;
+.carousel-indicators [data-bs-target].active {
+  background-color: rgba(34, 50, 198, 0.827);; /* Color de fondo más oscuro para el indicador activo */
 }
 
+/* Estilos para botones personalizados */
 .btn-top {
   margin-top: 10px;
+  background-color: #ff5722; /* Color de fondo naranja */
+  color: rgb(0, 0, 0); /* Color de la fuente */
+  border: none; /* Sin borde */
+  padding: 10px 20px; /* Padding */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave */
 }
 
-[data-bs-theme=light] .carousel .carousel-control-next-icon,
-[data-bs-theme=light] .carousel .carousel-control-prev-icon,
-[data-bs-theme=light].carousel .carousel-control-next-icon,
-[data-bs-theme=light].carousel .carousel-control-prev-icon {
-  filter: invert(1) grayscale(100);
+.btn-top:hover {
+  background-color: #e64a19; /* Color de fondo más oscuro al pasar el mouse */
 }
-
-[data-bs-theme=dark] .carousel .carousel-control-next-icon,
-[data-bs-theme=dark] .carousel .carousel-control-prev-icon,
-[data-bs-theme=dark].carousel .carousel-control-next-icon,
-[data-bs-theme=dark].carousel .carousel-control-prev-icon {
-  filter: invert(0) grayscale(100);
-}
-
-[data-bs-theme=dark] .carousel .carousel-indicators [data-bs-target],
-[data-bs-theme=dark].carousel .carousel-indicators [data-bs-target] {
-  background-color: gray;
-}
-
-[data-bs-theme=light] .carousel .carousel-indicators [data-bs-target],
-[data-bs-theme=light].carousel .carousel-indicators [data-bs-target] {
-  background-color: black;
-}
-
-.carousel-control-next-icon[data-bs-theme=dark] {
-  filter: none !important;
-  color: white !important;
-}
-
 
 .cart-items {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
+  padding: 10px; /* Más padding para mejor espaciado */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.cart-items:hover {
+  background-color: #f8f9fa; /* Fondo más claro al pasar el mouse */
 }
 
 .carousel-inner {
   height: 600px;
+  border-radius: 15px; /* Bordes redondeados */
+  overflow: hidden; /* Evita desbordamientos */
 }
 
 .contenedor-img {
@@ -105,12 +114,16 @@
   margin-left: 15%;
   width: 400px;
   height: 400px;
+  border-radius: 15px; /* Bordes redondeados */
+  overflow: hidden; /* Evita desbordamientos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el contenedor */
 }
 
 .camisa-fondo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 15px; /* Bordes redondeados */
 }
 
 .camisa-centrada {
@@ -120,4 +133,6 @@
   transform: translate(-50%, -70%);
   max-width: 50%;
   max-height: 50%;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para la imagen centrada */
 }

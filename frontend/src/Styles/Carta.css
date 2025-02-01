@@ -1,30 +1,53 @@
 .custom-card {
-  width: 170px;
-  height: 285px;
-  /* Otros estilos según tus necesidades */
+  width: 200px; /* Aumenté el ancho para un mejor aspecto */
+  height: 320px; /* Aumenté la altura para más espacio */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para efecto de elevación */
+  overflow: hidden; /* Asegura que el contenido no se desborde */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+  background-color: #fff; /* Fondo blanco */
+}
+
+.custom-card:hover {
+  transform: translateY(-5px); /* Efecto de levantar al pasar el mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el mouse */
 }
 
 .custom-img {
-  width: 170px;
-  height: 290px;
-  object-fit: cover; /* Ajusta la imagen al tamaño sin deformarla */
-  /* Otros estilos según tus necesidades */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  height: 240px; /* Ajusté la altura de la imagen */
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+  border-top-left-radius: 15px; /* Bordes redondeados en la parte superior */
+  border-top-right-radius: 15px;
 }
 
 .custom-body {
-  height: 40px;
+  height: 80px; /* Aumenté la altura para más espacio */
   display: flex;
   align-items: center;
-  justify-content: center; /* Por ejemplo, ajusta la altura del cuerpo del texto */
-  /* Otros estilos según tus necesidades */
+  justify-content: center;
+  padding: 10px; /* Añadí padding para mejor espaciado */
+  background-color: #f8f9fa; /* Fondo ligeramente gris */
+  border-bottom-left-radius: 15px; /* Bordes redondeados en la parte inferior */
+  border-bottom-right-radius: 15px;
 }
 
 .custom-body a {
   width: 100%;
-  /* Estilos adicionales, si es necesario */
+  text-align: center; /* Centra el texto */
+  text-decoration: none; /* Quita el subrayado del enlace */
+  color: #333; /* Color de texto oscuro */
+  font-weight: bold; /* Texto en negrita */
+  transition: color 0.3s ease; /* Transición suave para el color del texto */
 }
 
-.centered{
+.custom-body a:hover {
+  color: #007bff; /* Cambia el color al pasar el mouse */
+}
+
+.centered {
   display: flex;
   justify-content: center;
+  align-items: center; /* Centra verticalmente */
+  padding: 20px; /* Añadí padding para mejor espaciado */
 }
