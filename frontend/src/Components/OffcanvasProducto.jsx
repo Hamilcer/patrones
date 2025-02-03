@@ -7,14 +7,14 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 import Alert from "react-bootstrap/Alert";
-import { FachadaDeEstados } from "../Classes/Estados/Fachada/FachadaDeEstados";
+import { ManejadorDeEstados } from "../Logica/Estados/manejador/ManejadorDeEstados";
 
 function OffcanvasProducto() {
-  const fachada = new FachadaDeEstados();
+  const manejador = new ManejadorDeEstados();
 
   const [alertText, setAlertText] = useState("");
-  const [showAlert, setShowAlert] = useState(fachada.getMostrarAlerta());
-  const [alertState, setAlertState] = useState(fachada.getEstadoDeAlerta());
+  const [showAlert, setShowAlert] = useState(manejador.getMostrarAlerta());
+  const [alertState, setAlertState] = useState(manejador.getEstadoDeAlerta());
 
   const {
     show,
@@ -57,21 +57,21 @@ function OffcanvasProducto() {
     //   estampadoElegido >= 0 ? estampados[estampadoElegido].diseño : "";
     // console.log(estampa);
     if (limite == 0) {
-      // setShowAlert(fachada.cambioMostrarAlerta());
+      // setShowAlert(manejador.cambioMostrarAlerta());
       // setAlertText("Ya no queda este material");
-      // setAlertState(fachada.cambioEstadoDeAlerta(1));
+      // setAlertState(manejador.cambioEstadoDeAlerta(1));
     // } else if (!talla) {
-    //   setShowAlert(fachada.cambioMostrarAlerta());
+    //   setShowAlert(manejador.cambioMostrarAlerta());
     //   setAlertText("Pon una talla");
-    //   setAlertState(fachada.cambioEstadoDeAlerta(1));
+    //   setAlertState(manejador.cambioEstadoDeAlerta(1));
     // } else if (!material) {
-    //   setShowAlert(fachada.cambioMostrarAlerta());
+    //   setShowAlert(manejador.cambioMostrarAlerta());
     //   setAlertText("Elige un material");
-    //   setAlertState(fachada.cambioEstadoDeAlerta(1));
+    //   setAlertState(manejador.cambioEstadoDeAlerta(1));
     } else if (!cantidad || cantidad <= 0 ){// || cantidad > limite) {
-      setShowAlert(fachada.cambioMostrarAlerta());
+      setShowAlert(manejador.cambioMostrarAlerta());
       setAlertText("La cantidad debe ser mayor a 0");
-      setAlertState(fachada.cambioEstadoDeAlerta(1));
+      setAlertState(manejador.cambioEstadoDeAlerta(1));
     } else {
         let order = {
           cantidad,
@@ -94,16 +94,16 @@ function OffcanvasProducto() {
       itemData.push(order);
       localStorage.setItem("itemData", JSON.stringify(itemData));
 
-      setShowAlert(fachada.cambioMostrarAlerta());
+      setShowAlert(manejador.cambioMostrarAlerta());
       setAlertText("Se agrego al carrito :D");
       if (alertState !== "success") {
-        setAlertState(fachada.cambioEstadoDeAlerta(0));
+        setAlertState(manejador.cambioEstadoDeAlerta(0));
       }
     }
     setTimeout(() => {
       setShow(false);
       setShow2(false);
-      setShowAlert(fachada.cambioMostrarAlerta());
+      setShowAlert(manejador.cambioMostrarAlerta());
     }, 1000);
   };
 
@@ -212,7 +212,7 @@ function OffcanvasProducto() {
           className="mt-5"
           variant={alertState}
           show={showAlert}
-          onClose={() => setShowAlert(fachada.cambioMostrarAlerta())}
+          onClose={() => setShowAlert(manejador.cambioMostrarAlerta())}
           dismissible
         >
           {alertText}

@@ -9,7 +9,7 @@ import { useState } from "react";
 import Header from "../Classes/Header/Header";
 import "../Styles/Login.css";
 import { ConversionEmail } from "../Classes/Adapter/conversionEmail";
-import { FachadaDeEstados } from "../Classes/Estados/Fachada/FachadaDeEstados";
+import { ManejadorDeEstados } from "../Logica/Estados/manejador/ManejadorDeEstados";
 
 function Login() {
   const navigate = useNavigate();
@@ -25,11 +25,11 @@ function Login() {
   });
 
   const emailAdapter = new ConversionEmail();
-  const fachada= new FachadaDeEstados();
+  const manejador= new ManejadorDeEstados();
 
   const [alertText, setAlertText] = useState("");
-  const [showAlert, setShowAlert] = useState(fachada.getMostrarAlerta());
-  const [alertState, setAlertState] = useState(fachada.getEstadoDeAlerta());
+  const [showAlert, setShowAlert] = useState(manejador.getMostrarAlerta());
+  const [alertState, setAlertState] = useState(manejador.getEstadoDeAlerta());
 
   const loadCliente = async (email) => {
     try {
@@ -37,12 +37,12 @@ function Login() {
       if (tipoUsuario) {
         if (cliente.email.length > 45) {
           setAlertText("El correo es mayor a 45 caracteres");
-          setAlertState(fachada.cambioEstadoDeAlerta(1));
-          setShowAlert(fachada.cambioMostrarAlerta());
+          setAlertState(manejador.cambioEstadoDeAlerta(1));
+          setShowAlert(manejador.cambioMostrarAlerta());
         } else if (cliente.password.length > 45) {
           setAlertText("La contraseña es mayor a 45 caracteres");
-          setAlertState(fachada.cambioEstadoDeAlerta(1));
-          setShowAlert(fachada.cambioMostrarAlerta());
+          setAlertState(manejador.cambioEstadoDeAlerta(1));
+          setShowAlert(manejador.cambioMostrarAlerta());
         } else {
           email = emailAdapter.convertirEmailAMinuscula(cliente.email);
           console.log(email);
@@ -56,12 +56,12 @@ function Login() {
 
               if (cliente.password !== cliente.storedPassword) {
                 setAlertText("Cotraseña incorrecta");
-                setAlertState(fachada.cambioEstadoDeAlerta(1));
-                setShowAlert(fachada.cambioMostrarAlerta());
+                setAlertState(manejador.cambioEstadoDeAlerta(1));
+                setShowAlert(manejador.cambioMostrarAlerta());
               } else {
                 setAlertText("Correo y contraseña válidos :D");
-                setAlertState(fachada.cambioEstadoDeAlerta(0));
-                setShowAlert(fachada.cambioMostrarAlerta());
+                setAlertState(manejador.cambioEstadoDeAlerta(0));
+                setShowAlert(manejador.cambioMostrarAlerta());
                 localStorage.setItem("email", cliente.email);
                 localStorage.setItem("username", cliente.nombre);
                 localStorage.setItem("dinero", 3000000);
@@ -70,8 +70,8 @@ function Login() {
               }
             } else {
               setAlertText("Correo no registrado");
-              setAlertState(fachada.cambioEstadoDeAlerta(1));
-              setShowAlert(fachada.cambioMostrarAlerta());
+              setAlertState(manejador.cambioEstadoDeAlerta(1));
+              setShowAlert(manejador.cambioMostrarAlerta());
               // Mostrar la alerta en caso de error
             }
           } else if (tipoUsuario == "Administrador") {
@@ -84,33 +84,33 @@ function Login() {
 
               if (cliente.password !== cliente.storedPassword) {
                 setAlertText("Cotraseña incorrecta");
-                setAlertState(fachada.cambioEstadoDeAlerta(1));
-                setShowAlert(fachada.cambioMostrarAlerta());
+                setAlertState(manejador.cambioEstadoDeAlerta(1));
+                setShowAlert(manejador.cambioMostrarAlerta());
               } else {
                 setAlertText("Correo y contraseña válidos :D");
-                setAlertState(fachada.cambioEstadoDeAlerta(0));
-                setShowAlert(fachada.cambioMostrarAlerta());
+                setAlertState(manejador.cambioEstadoDeAlerta(0));
+                setShowAlert(manejador.cambioMostrarAlerta());
                 localStorage.setItem("email", cliente.email);
                 localStorage.setItem("username", cliente.nombre);
                 localStorage.setItem("tipoDeCliente", "Administrador");
-                setTimeout(() => navigate("/catalogoEstampado"), 200);
+                setTimeout(() => navigate("/catalogoServicios"), 200);
               }
             } else {
               setAlertText("Correo no registrado");
-              setAlertState(fachada.cambioEstadoDeAlerta(1));
-              setShowAlert(fachada.cambioMostrarAlerta());
+              setAlertState(manejador.cambioEstadoDeAlerta(1));
+              setShowAlert(manejador.cambioMostrarAlerta());
               // Mostrar la alerta en caso de error
             }
           }
         }
       } else {
         setAlertText("¿Qué tipo de usuario eres?");
-        setAlertState(fachada.cambioEstadoDeAlerta(1));
-        setShowAlert(fachada.cambioMostrarAlerta());
+        setAlertState(manejador.cambioEstadoDeAlerta(1));
+        setShowAlert(manejador.cambioMostrarAlerta());
       }
     } catch (error) {
-      setAlertState(fachada.cambioEstadoDeAlerta(1));
-      setShowAlert(fachada.cambioMostrarAlerta());
+      setAlertState(manejador.cambioEstadoDeAlerta(1));
+      setShowAlert(manejador.cambioMostrarAlerta());
       // Mostrar la alerta en caso de error
       // Manejar errores de red o del servidor
       console.error(error);
@@ -135,7 +135,7 @@ function Login() {
           className="alert mt-5"
           variant={alertState}
           show={showAlert}
-          onClose={() => setShowAlert(fachada.cambioMostrarAlerta())}
+          onClose={() => setShowAlert(manejador.cambioMostrarAlerta())}
           dismissible
         >
           {alertText}

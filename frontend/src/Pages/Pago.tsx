@@ -9,7 +9,7 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Alert from "react-bootstrap/Alert";
-import { FachadaDeEstados } from "../Classes/Estados/Fachada/FachadaDeEstados";
+import { ManejadorDeEstados } from "../Logica/Estados/manejador/ManejadorDeEstados";
 import Invocador from "../Classes/Pago/Comando/Invocador";
 import ComandoPedido from "../Classes/Pago/Comando/ComandoPedido";
 import ComandoCrearCamisa from "../Classes/Pago/Comando/ComandoCrearCamisa";
@@ -38,14 +38,14 @@ const Pago: React.FC = () => {
   });
 
   const navigate = useNavigate();
-  const fachada = new FachadaDeEstados();
+  const manejador = new ManejadorDeEstados();
 
   const [alertText, setAlertText] = useState<string>("");
   const [showAlert, setShowAlert] = useState<boolean>(
-    fachada.getMostrarAlerta()
+    manejador.getMostrarAlerta()
   );
   const [alertState, setAlertState] = useState<string>(
-    fachada.getEstadoDeAlerta()
+    manejador.getEstadoDeAlerta()
   );
   // Implementacion del patron comando
   const dataSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -76,8 +76,8 @@ const Pago: React.FC = () => {
     descontarDinero();
     setAlertText("Pago exitoso");
     localStorage.removeItem("itemData");
-    setAlertState(fachada.cambioEstadoDeAlerta(0));
-    setShowAlert(fachada.cambioMostrarAlerta());
+    setAlertState(manejador.cambioEstadoDeAlerta(0));
+    setShowAlert(manejador.cambioMostrarAlerta());
     setTimeout(() => navigate("/"), 1000);
   };
 
@@ -121,7 +121,7 @@ const Pago: React.FC = () => {
         className="alert mt-5"
         variant={alertState}
         show={showAlert}
-        onClose={() => setShowAlert(fachada.cambioMostrarAlerta())}
+        onClose={() => setShowAlert(manejador.cambioMostrarAlerta())}
         dismissible
       >
         {alertText}

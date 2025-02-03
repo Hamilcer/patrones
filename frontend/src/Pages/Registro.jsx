@@ -8,15 +8,15 @@ import { useState } from "react";
 
 import { ConversionEmail } from "../Classes/Adapter/conversionEmail";
 import Header from "../Classes/Header/Header";
-import { FachadaDeEstados } from "../Classes/Estados/Fachada/FachadaDeEstados";
+import { ManejadorDeEstados } from "../Logica/Estados/manejador/ManejadorDeEstados";
 
 
 function Registro() {
-  const fachada= new FachadaDeEstados();
+  const manejador= new ManejadorDeEstados();
 
   const [alertText, setAlertText] = useState("");
-  const [showAlert, setShowAlert] = useState(fachada.getMostrarAlerta());
-  const [alertState, setAlertState] = useState(fachada.getEstadoDeAlerta());
+  const [showAlert, setShowAlert] = useState(manejador.getMostrarAlerta());
+  const [alertState, setAlertState] = useState(manejador.getEstadoDeAlerta());
 
   const [cliente, setCliente] = useState({
     nombre: "",
@@ -35,19 +35,19 @@ function Registro() {
     setLoading(true);
     try {
       if (cliente.nombre.length > 45) {
-        setShowAlert(fachada.cambioMostrarAlerta());
+        setShowAlert(manejador.cambioMostrarAlerta());
         setAlertText("El nombre es mayor a 45 caracteres");
-        setAlertState(fachada.cambioEstadoDeAlerta(1));
+        setAlertState(manejador.cambioEstadoDeAlerta(1));
         setLoading(false);
       } else if (cliente.email.length > 45) {
-        setShowAlert(fachada.cambioMostrarAlerta());
+        setShowAlert(manejador.cambioMostrarAlerta());
         setAlertText("El correo es mayor a 45 caracteres");
-        setAlertState(fachada.cambioEstadoDeAlerta(1));
+        setAlertState(manejador.cambioEstadoDeAlerta(1));
         setLoading(false);
       } else if (cliente.password.length > 45) {
-        setShowAlert(fachada.cambioMostrarAlerta());
+        setShowAlert(manejador.cambioMostrarAlerta());
         setAlertText("La contraseña es mayor a 45 caracteres");
-        setAlertState(fachada.cambioEstadoDeAlerta(1));
+        setAlertState(manejador.cambioEstadoDeAlerta(1));
         setLoading(false);
       } else {
         cliente.email = emailAdapter.convertirEmailAMinuscula(cliente.email);
@@ -60,17 +60,17 @@ function Registro() {
           const text = await response.text();
           if ("error" == text) {
             setLoading(false);
-            setShowAlert(fachada.cambioMostrarAlerta());
+            setShowAlert(manejador.cambioMostrarAlerta());
             setAlertText("El usuario está duplicado");
-            setAlertState(fachada.cambioEstadoDeAlerta(1));
+            setAlertState(manejador.cambioEstadoDeAlerta(1));
             setLoading(false);
           } else {
             setLoading(false);
             setLoading(false);
             console.log("emailMinuscula");
             setAlertText("El registro se realizó correctamente");
-            setAlertState(fachada.cambioEstadoDeAlerta(0));
-            setShowAlert(fachada.cambioMostrarAlerta());
+            setAlertState(manejador.cambioEstadoDeAlerta(0));
+            setShowAlert(manejador.cambioMostrarAlerta());
             setTimeout(() => navigate("/login"), 500);
           }
         } else if (cliente.tipoCliente == "Cliente") {
@@ -82,15 +82,15 @@ function Registro() {
 
           const text = await response.text();
           if ("error" == text) {
-            setShowAlert(fachada.cambioMostrarAlerta());
+            setShowAlert(manejador.cambioMostrarAlerta());
             setAlertText("El usuario está duplicado");
-            setAlertState(fachada.cambioEstadoDeAlerta(1));
+            setAlertState(manejador.cambioEstadoDeAlerta(1));
             setLoading(false);
           } else {
             setLoading(false);
             setAlertText("El registro se realizó correctamente");
-            setAlertState(fachada.cambioEstadoDeAlerta(0));
-            setShowAlert(fachada.cambioMostrarAlerta());
+            setAlertState(manejador.cambioEstadoDeAlerta(0));
+            setShowAlert(manejador.cambioMostrarAlerta());
             setTimeout(() => navigate("/login"), 500);
             console.log(emailAdapter.convertirEmailAMinuscula(cliente.email));
           }
@@ -116,7 +116,7 @@ function Registro() {
           className="mt-5"
           variant={alertState}
           show={showAlert}
-          onClose={() => setShowAlert(fachada.cambioMostrarAlerta())}
+          onClose={() => setShowAlert(manejador.cambioMostrarAlerta())}
           dismissible
         >
           {alertText}
