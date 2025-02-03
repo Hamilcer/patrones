@@ -6,10 +6,10 @@ import Alert from "react-bootstrap/Alert";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Header from "../Classes/Header/Header";
+import Header from "../Patrones/Header/Header";
 import "../Styles/Login.css";
-import { ConversionEmail } from "../Classes/Adapter/conversionEmail";
-import { ManejadorDeEstados } from "../Logica/manejador/ManejadorDeEstados";
+import { ConversionEmail } from "../Patrones/Adapter/conversionEmail";
+import { ManejadorDeEstados } from "../Logica/ManejadorDeEstados";
 
 function Login() {
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
-import { ContextoBooleano } from "../EstadoBooleano/ContextoBooleano";
-import { ContextoString } from "../EstadoString/ContextoString";
+import { ContextoBooleano } from "./LogicoEstado";
+import { ContextoString } from "./TextoEstado";
 
 export class ManejadorDeEstados {
     private contextoEstadoDeAlerta: ContextoString;

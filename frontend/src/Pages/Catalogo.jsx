@@ -13,7 +13,7 @@ import OffcanvasProducto from "../Components/OffcanvasProducto";
 import { GeneralProvider } from "../Utils/generalContext";
 import { SpecificProvider } from "../Utils/SpecificContext";
 import Footer from "../Components/Footer";
-import Header from "../Classes/Header/Header";
+import Header from "../Patrones/Header/Header";
 import ThemeSwitcher from "../Components/ThemeSwitcher";
 import ContenedorCartas from "../Components/ContenedorCartas";
 {

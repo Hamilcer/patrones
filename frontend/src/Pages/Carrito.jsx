@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Contenido from "../Components/Carrito/Contenido";
 import { SpecificProvider } from "../Utils/SpecificContext";
 import Footer from "../Components/Footer";
-import Header from "../Classes/Header/Header";
+import Header from "../Patrones/Header/Header";
 import ThemeSwitcher from "../Components/ThemeSwitcher";
 
 import "..//Styles/Carrito.css";

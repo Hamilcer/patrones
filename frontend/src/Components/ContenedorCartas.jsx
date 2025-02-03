@@ -1,8 +1,8 @@
 // import React from "react";
-// import CreadorEstampable from "../Classes/MetodoFabrica/CreadorEstampable";
-import CreadorTransformadores from "../Classes/MetodoFabrica/CreadorTransformadores";
-import CreadorPostes from "../Classes/MetodoFabrica/CreadorPostes";
-// import CreadorCajasYTableros from "../Classes/MetodoFabrica/CreadorCajasYTableros"; // Asegúrate de importar esta clase si existe
+// import CreadorEstampable from "../Patrones/MetodoFabrica/CreadorEstampable";
+import CreadorTransformadores from "../Patrones/MetodoFabrica/CreadorTransformadores";
+import CreadorPostes from "../Patrones/MetodoFabrica/CreadorPostes";
+// import CreadorCajasYTableros from "../Patrones/MetodoFabrica/CreadorCajasYTableros"; // Asegúrate de importar esta clase si existe
 
 // eslint-disable-next-line react/prop-types
 function ContenedorCartas({ tipo }) {

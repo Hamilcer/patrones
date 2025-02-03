@@ -1,5 +1,5 @@
 //import React from "react";
-import Director from "../Classes/Builder/Director";
+import Director from "../Patrones/Builder/Director";
 import "../Styles/Carta.css";
 
 function CartaComponent({ img, text, price, artista, style }) {

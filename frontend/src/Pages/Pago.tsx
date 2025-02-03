@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../Classes/Header/Header";
+import Header from "../Patrones/Header/Header";
 import Footer from "../Components/Footer";
 import ThemeSwitcher from "../Components/ThemeSwitcher";
 import "../Styles/pago.css";
@@ -9,15 +9,15 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Alert from "react-bootstrap/Alert";
-import { ManejadorDeEstados } from "../Logica/manejador/ManejadorDeEstados";
-import Invocador from "../Classes/Pago/Comando/Invocador";
-import ComandoPedido from "../Classes/Pago/Comando/ComandoPedido";
-import ComandoCrearCamisa from "../Classes/Pago/Comando/ComandoCrearCamisa";
-import ComandoPago from "../Classes/Pago/Comando/ComandoPago";
-import ComandoCrearInformacion from "../Classes/Pago/Comando/ComandoCrearInformacion";
-import DatosEnvio from "../Classes/Pago/Tipos/DatosEnvio";
-import InfoPago from "../Classes/Pago/Tipos/InfoPago";
-import ItemData from "../Classes/Pago/Tipos/ItemData";
+import { ManejadorDeEstados } from "../Logica/ManejadorDeEstados";
+import Invocador from "../Patrones/Pago/Comando/Invocador";
+import ComandoPedido from "../Patrones/Pago/Comando/ComandoPedido";
+import ComandoCrearCamisa from "../Patrones/Pago/Comando/ComandoCrearCamisa";
+import ComandoPago from "../Patrones/Pago/Comando/ComandoPago";
+import ComandoCrearInformacion from "../Patrones/Pago/Comando/ComandoCrearInformacion";
+import DatosEnvio from "../Patrones/Pago/Tipos/DatosEnvio";
+import InfoPago from "../Patrones/Pago/Tipos/InfoPago";
+import ItemData from "../Patrones/Pago/Tipos/ItemData";
 
 const Pago: React.FC = () => {
   const [datosEnvio, setDatosEnvio] = useState<DatosEnvio>({

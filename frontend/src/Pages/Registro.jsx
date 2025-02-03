@@ -6,9 +6,9 @@ import Alert from "react-bootstrap/Alert";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 
-import { ConversionEmail } from "../Classes/Adapter/conversionEmail";
-import Header from "../Classes/Header/Header";
-import { ManejadorDeEstados } from "../Logica/manejador/ManejadorDeEstados";
+import { ConversionEmail } from "../Patrones/Adapter/conversionEmail";
+import Header from "../Patrones/Header/Header";
+import { ManejadorDeEstados } from "../Logica/ManejadorDeEstados";
 
 
 function Registro() {
