@@ -8,7 +8,7 @@ import { useState } from "react";
 
 import { ConversionEmail } from "../Classes/Adapter/conversionEmail";
 import Header from "../Classes/Header/Header";
-import { ManejadorDeEstados } from "../Logica/Estados/manejador/ManejadorDeEstados";
+import { ManejadorDeEstados } from "../Logica/manejador/ManejadorDeEstados";
 
 
 function Registro() {

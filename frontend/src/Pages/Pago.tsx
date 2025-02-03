@@ -9,7 +9,7 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Alert from "react-bootstrap/Alert";
-import { ManejadorDeEstados } from "../Logica/Estados/manejador/ManejadorDeEstados";
+import { ManejadorDeEstados } from "../Logica/manejador/ManejadorDeEstados";
 import Invocador from "../Classes/Pago/Comando/Invocador";
 import ComandoPedido from "../Classes/Pago/Comando/ComandoPedido";
 import ComandoCrearCamisa from "../Classes/Pago/Comando/ComandoCrearCamisa";

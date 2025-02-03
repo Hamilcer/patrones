@@ -7,7 +7,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 import Alert from "react-bootstrap/Alert";
-import { ManejadorDeEstados } from "../Logica/Estados/manejador/ManejadorDeEstados";
+import { ManejadorDeEstados } from "../Logica/manejador/ManejadorDeEstados";
 
 function OffcanvasProducto() {
   const manejador = new ManejadorDeEstados();

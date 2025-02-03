@@ -9,7 +9,7 @@ import { useState } from "react";
 import Header from "../Classes/Header/Header";
 import "../Styles/Login.css";
 import { ConversionEmail } from "../Classes/Adapter/conversionEmail";
-import { ManejadorDeEstados } from "../Logica/Estados/manejador/ManejadorDeEstados";
+import { ManejadorDeEstados } from "../Logica/manejador/ManejadorDeEstados";
 
 function Login() {
   const navigate = useNavigate();
