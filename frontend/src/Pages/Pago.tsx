@@ -10,14 +10,10 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Alert from "react-bootstrap/Alert";
 import { ManejadorDeEstados } from "../Logica/ManejadorDeEstados";
-import Invocador from "../Patrones/Pago/Comando/Invocador";
-import ComandoPedido from "../Patrones/Pago/Comando/ComandoPedido";
-import ComandoCrearCamisa from "../Patrones/Pago/Comando/ComandoCrearCamisa";
-import ComandoPago from "../Patrones/Pago/Comando/ComandoPago";
-import ComandoCrearInformacion from "../Patrones/Pago/Comando/ComandoCrearInformacion";
-import DatosEnvio from "../Patrones/Pago/Tipos/DatosEnvio";
-import InfoPago from "../Patrones/Pago/Tipos/InfoPago";
-import ItemData from "../Patrones/Pago/Tipos/ItemData";
+import {Invocador, ComandoPedido,  ComandoCrearCamisa,  ComandoPago,  ComandoCrearInformacion} from "../Logica/Pago/Orden/Orden";
+import DatosEnvio from "../Logica/Pago/Tipos/DatosEnvio";
+import InfoPago from "../Logica/Pago/Tipos/InfoPago";
+import ItemData from "../Logica/Pago/Tipos/ItemData";
 
 const Pago: React.FC = () => {
   const [datosEnvio, setDatosEnvio] = useState<DatosEnvio>({
