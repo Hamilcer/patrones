@@ -41,7 +41,7 @@ function OffcanvasEstampado() {
 
   useEffect(() => {
     // Llamar al endpoint para obtener los estampados
-    fetch("http://localhost:4000/getEstampados") // Asegúrate de que la ruta sea correcta según tu configuración de servidor
+    fetch("http://localhost:4000/getProductos") // Asegúrate de que la ruta sea correcta según tu configuración de servidor
       .then((response) => response.json())
       .then((data) => {
         if (data.rowCount != 0) {

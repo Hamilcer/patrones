@@ -12,9 +12,9 @@ import { createPedido } from "../controllers/pedidoDAO.controller.js";
 import { createCamisa } from "../controllers/camisaDAO.controller.js";
 import { saveImage } from "../controllers/imagenDAO.controller.js";
 import {
-  createEstampado,
-  getEstampados,
-} from "../controllers/estampadoDAO.controller.js";
+  createProducto,
+  getProductos,
+} from "../controllers/productoDAO.controller.js";
 import { createPago } from "../controllers/pagoDAO.controller.js";
 import {
   getCantidad,
@@ -47,9 +47,9 @@ router.post("/payment", createPago);
 router.get("/materialQuantity/:material", getCantidad);
 router.post("/updateQuantity", updateCantidad);
 
-// Rutas estampado
+// Rutas Productos(proxy)
 router.post("/image", saveImage);
-router.post("/estampado", createEstampado);
-router.get("/getEstampados", getEstampados);
+router.post("/producto", createProducto);
+router.get("/getProductos", getProductos);
 
 export default router;

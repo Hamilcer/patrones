@@ -16,23 +16,23 @@ import "../Styles/Offcanvas.css";
 /* Hooks */
 import { useState, useEffect } from "react";
 
-function CatalogoEstampados() {
+function CatalogoServicios() {
   const [estampados, setEstampados] = useState([]);
 
   useEffect(() => {
     // Llamar al endpoint para obtener los estampados
-    fetch("http://localhost:4000/getEstampados") // Asegúrate de que la ruta sea correcta según tu configuración de servidor
+    fetch("http://localhost:4000/getProductos") // Asegúrate de que la ruta sea correcta según tu configuración de servidor
       .then((response) => response.json())
       .then((data) => {
         if (data.rowCount != 0) {
           setEstampados(data); // Establecer los estampados en el estado local
         } else {
-          console.log("no hay estampados");
+          console.log("no hay Servicios");
           console.log(estampados.length);
         }
       })
       .catch((error) => {
-        console.error("Error al obtener los estampados:", error);
+        console.error("Error al obtener los Servicios:", error);
       });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // La dependencia vacía asegura que esta llamada solo se haga una vez al cargar el componente
@@ -107,4 +107,4 @@ function CatalogoEstampados() {
   );
 }
 
-export default CatalogoEstampados;
+export default CatalogoServicios;

@@ -16,13 +16,13 @@ import Catalogo from "./Pages/Catalogo";
 import Pago from "./Pages/Pago.tsx";
 import Carrito from "./Pages/Carrito.jsx";
 import FormEstampado from "./Pages/FormEstampado.jsx";
-import CatalogoEstampados from "./Pages/CatalogoEstampados.jsx";
+import CatalogoServicios from "./Pages/CatalogoServicios.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Catalogo />} />
-      <Route path="catalogoEstampado" element={<CatalogoEstampados />} />
+      <Route path="/catalogoServicios" element={<CatalogoServicios />} />
       <Route path="/" element={<ProtectedRoutes />}>
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />

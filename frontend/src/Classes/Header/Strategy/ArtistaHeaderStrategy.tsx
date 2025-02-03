@@ -53,8 +53,8 @@ class ArtistaHeaderStrategy implements HeaderStrategy {
               <Nav.Item>
                 <Nav.Link
                   as={Link}
-                  to="/catalogoEstampado"
-                  active={location.pathname === "/catalogoEstampado"}
+                  to="/catalogoServicios"
+                  active={location.pathname === "/catalogoServicios"}
                 >
                   <FontAwesomeIcon icon={faStar} /> Servicios
                 </Nav.Link>

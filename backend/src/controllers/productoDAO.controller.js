@@ -1,6 +1,6 @@
 import { pool } from "../db.js";
 
-export const createEstampado = async (req, res, next) => {
+export const createProducto = async (req, res, next) => {
   try {
     const { diseño, nombre, categoria, artista_email } = req.body;
 
@@ -16,7 +16,7 @@ export const createEstampado = async (req, res, next) => {
   }
 };
 
-export const getEstampados = async (req, res, next) => {
+export const getProductos = async (req, res, next) => {
   try {
     const estampados = await pool.query(
       "SELECT diseño, nombre, artista_email FROM estampado LIMIT 20"
