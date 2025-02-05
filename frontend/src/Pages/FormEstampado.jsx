@@ -74,7 +74,7 @@ export default function FormEstampado() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(servicio),
     });
-    setTimeout(() => navigate("/catalogoervicios"), 200);
+    setTimeout(() => navigate("/catalogoservicios"), 200);
   };
 
   return (
@@ -139,7 +139,7 @@ export default function FormEstampado() {
           {/* Botón de envío */}
           <div className="d-grid">
             <Button
-              variant="outline-light"
+              variant=""
               type="submit"
               className="ms-3 d-grid"
               size="md"

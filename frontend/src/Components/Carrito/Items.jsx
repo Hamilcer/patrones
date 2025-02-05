@@ -93,7 +93,7 @@ function Items(prop) {
           <Carousel.Caption>
             <Pluralidad data={data} />
             <Button
-              className="btn-dark btn-outline-light"
+              className=""
               onClick={() => eliminarDelCarrito(prop.itemData.indexOf(data))}
             >
               Eliminar del carrito

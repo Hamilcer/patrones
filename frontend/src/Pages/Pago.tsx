@@ -262,7 +262,7 @@ const Pago: React.FC = () => {
             </Row>
 
             <Button
-              variant="outline-light"
+              variant=""
               type="submit"
               className="ms-3 d-grid"
               disabled={
