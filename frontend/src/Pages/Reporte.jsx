@@ -6,7 +6,12 @@ import { useEffect, useState } from "react";
 /* My components */
 import Footer from "../Components/Footer";
 import Header from "../Patrones/Header/Header";
-import { DashboardServicios, DashboardMateriales, DashboardGlobal, MetricsMonitorServicios, MetricsMonitorMateriales } from "../Patrones/Observador/Observador";
+import DashboardGlobal from "../Patrones/Observador/DashboardGlobal";
+import DashboardMateriales from "../Patrones/Observador/DashboardMateriales";
+import DashboardServicios from "../Patrones/Observador/DashboardServicios";
+import {MetricsMonitorMateriales} from "../Patrones/Observador/MetricsMonitorMateriales";
+import {MetricsMonitorServicios} from "../Patrones/Observador/MetricsMonitorServicios";
+
 
 export default function Reporte() {
     // Usamos 'new' para crear las instancias de las clases
