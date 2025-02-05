@@ -7,7 +7,7 @@ import Carta from "./Carta";
 import React from "react";
 
 function OffcanvasEstampado() {
-  // Variables que almacenan la elección de estampado del cliente
+  // Variables que almacenan la elección de grupo del cliente
   const { handleClose1, setEstampadoElegido, show2 } = useGeneral();
 
   // Estado para almacenar una instancia de EstampadosProxy
@@ -34,7 +34,7 @@ function OffcanvasEstampado() {
       lg="3"
       className="text-center mt-3"
       onClick={() => {
-        // Al hacer clic en una carta, se actualiza el estampado elegido en el contexto
+        // Al hacer clic en una carta, se actualiza el grupo elegido en el contexto
         setEstampadoElegido(index);
       }}
     >
@@ -48,10 +48,10 @@ function OffcanvasEstampado() {
   ));
 
   return (
-    // Componente Offcanvas de React Bootstrap para mostrar la selección de estampado
+    // Componente Offcanvas de React Bootstrap para mostrar la selección de grupo
     <Offcanvas show={show2} onHide={handleClose1} placement="start">
       <Offcanvas.Header closeButton>
-        <Offcanvas.Title>Selecciona tu estampado</Offcanvas.Title>
+        <Offcanvas.Title>Selecciona tu grupo</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body className=" centered-items text-center">
         {/* Si hay estampados disponibles, se muestran las cartas, de lo contrario, se muestra un mensaje */}

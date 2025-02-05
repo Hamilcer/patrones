@@ -17,12 +17,14 @@ import Pago from "./Pages/Pago.tsx";
 import Carrito from "./Pages/Carrito.jsx";
 import FormEstampado from "./Pages/FormEstampado.jsx";
 import CatalogoServicios from "./Pages/CatalogoServicios.jsx";
+import Reporte from "./Pages/Reporte.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Catalogo />} />
       <Route path="/catalogoServicios" element={<CatalogoServicios />} />
+     <Route path="/reporte" element={ <Reporte/> }></Route> 
       <Route path="/" element={<ProtectedRoutes />}>
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />

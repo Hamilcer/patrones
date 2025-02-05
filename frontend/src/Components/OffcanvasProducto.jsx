@@ -195,7 +195,7 @@ function OffcanvasProducto() {
                   setShow2(true);
                 }}
               >
-                Agregar Estampado
+                Agregar Grupo
               </Button>
             ) : (
               <></>
