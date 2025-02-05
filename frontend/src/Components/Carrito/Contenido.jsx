@@ -94,7 +94,7 @@ function Contenido() {
                 <Button
                   disabled={verificarDinero()}
                   onClick={calcularTotal}
-                  className="btn-dark btn-outline-light"
+                  className=""
                 >
                   <Link to={"/interfazPago"} className="btn p-0 m-0">
                     {dirigirAPago()}

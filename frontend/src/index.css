@@ -29,3 +29,10 @@
 .hidden{
   display: none;
 }
+/*Ahora si se puede ver el boton de Publicar*/
+.bottom-fixed {
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  z-index: 1000; 
+}

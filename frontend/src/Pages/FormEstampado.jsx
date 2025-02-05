@@ -139,7 +139,7 @@ export default function FormEstampado() {
           {/* Botón de envío */}
           <div className="d-grid">
             <Button
-              variant="outline-light"
+              variant=""
               type="submit"
               className="ms-3 d-grid"
               size="md"

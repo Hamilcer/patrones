@@ -8,7 +8,7 @@ export class BuilderConcreto extends Builder {
     super();
   }
 
-  construirParte(propiedades: { img: string, text: string, price?: number, artista?: string, style?: string }): void {
+  construirParte(propiedades: { img: string, text: string, price?: number, worker?: string, style?: string }): void {
     this.carta.setPropiedades(propiedades);
   }
 
@@ -21,12 +21,12 @@ export class BuilderConcreto extends Builder {
   }
 
   createText(): JSX.Element {
-    const { text, price, artista } = this.carta.getPropiedades();
+    const { text, price, worker } = this.carta.getPropiedades();
     const cardText = (
       <Card.Text>
         {text}
         <br />
-        {price ? `$${price}` : `${artista}`}
+        {price ? `$${price}` : `${worker}`}
       </Card.Text>
     );
     this.carta.setCardText(cardText);
