@@ -8,6 +8,8 @@ class ProductoTransformadores extends Producto {
   render(): JSX.Element {
     const productos = [
       { id: 1, img: "/Productos/Transformadores/transformador-de-corriente-atel-media-tension-ext-20-40-5-amp-175kv.jpg", text: "transformador de corriente atel media tension", price: 50000 },
+      { id: 2, img: "/Productos/Transformadores/transformador-de-potencial-uso-interior-34500-120v-clase-0-5-modelo-tti36-2.jpg", text: "transformador de potencial uso interior", price: 100000 },
+      { id: 3, img: "/Productos/Transformadores/transformador-monofasico-en-aceite-de-5-kva-13200-v-120-240-v-magnetron.jpg", text: "transformador monofasico en aceite de 5 kva", price: 80000 },
     ];
 
     const { handleShow, setEstampable, setEstampadoElegido } = useGeneral();

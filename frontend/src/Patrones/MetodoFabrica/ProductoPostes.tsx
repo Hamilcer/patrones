@@ -7,8 +7,9 @@ import Producto from "./Producto";
 class ProductoPostes extends Producto {
   render(): JSX.Element {
     const productos = [
-      { id: 1, img: "/Productos/Postes/cerco-en-madera-inmunizada-de-2-20-mts.jpg", text: "Cerco en madera inmunizada de 2.20 mts", price: 50000 },
-      { id: 2, img: "/Productos/Postes/poste-de-concreto-pretensado-de-8-metros-510-kg.jpg", text: "Poste concreto pretensado de 8 metros", price: 50000 },
+      { id: 1, img: "/Productos/Postes/cerco-en-madera-inmunizada-de-2-20-mts.jpg", text: "Cerco en madera inmunizada de 2.20 mts", price: 40000 },
+      { id: 2, img: "/Productos/Postes/poste-de-concreto-pretensado-de-8-metros-510-kg.jpg", text: "Poste concreto pretensado de 8 metros", price: 350000 },
+      { id: 3, img: "/Productos/Postes/poste-metalico-conico-8-metros-para-alumbrado-publico.jpg", text: "Poste metalico conico 8 metros", price: 78900 },
     ];
 
     const { handleShow, setEstampable, setEstampadoElegido } = useGeneral();
