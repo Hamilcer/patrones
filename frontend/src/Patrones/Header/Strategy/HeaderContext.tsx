@@ -1,7 +1,7 @@
 import HeaderStrategy from "./HeaderStrategy";
 import ClienteHeaderStrategy from "./ClienteHeaderStrategy";
 import NoAuthHeaderStrategy from "./NoAuthHeaderStrategy";
-import ArtistaHeaderStrategy from "./ArtistaHeaderStrategy";
+import AdministradorHeaderStrategy from "./AdministradorHeaderStrategy";
 
 // Clase de contexto que gestiona la estrategia
 class HeaderContext {
@@ -22,7 +22,7 @@ class HeaderContext {
     if (isUserAuthenticated && tipoCliente == "Cliente") {
       this.setStrategy(new ClienteHeaderStrategy());
     } else if (isUserAuthenticated && tipoCliente == "Administrador") {
-      this.setStrategy(new ArtistaHeaderStrategy());
+      this.setStrategy(new AdministradorHeaderStrategy());
     } else {
       this.setStrategy(new NoAuthHeaderStrategy());
     }

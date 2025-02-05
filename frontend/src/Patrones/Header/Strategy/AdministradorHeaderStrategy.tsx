@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import HeaderStrategy from "./HeaderStrategy";
 
 // Estrategia para artista autenticado
-class ArtistaHeaderStrategy implements HeaderStrategy {
+class AdministradorHeaderStrategy implements HeaderStrategy {
   private navigate = useNavigate();
 
   // Metodo para cerrar sesion
@@ -69,6 +69,16 @@ class ArtistaHeaderStrategy implements HeaderStrategy {
                   <FontAwesomeIcon icon={faStar} /> Publicar servicios
                 </Nav.Link>
               </Nav.Item>
+              
+              <Nav.Item>
+                <Nav.Link
+                  as={Link}
+                  to="/reporte"
+                  active={location.pathname === "/reporte"}
+                >
+                  <FontAwesomeIcon icon={faStar} /> Ver reporte
+                </Nav.Link>
+              </Nav.Item>
 
               <Nav.Item onClick={() => this.reset()}>
                 <Nav.Link>
@@ -83,4 +93,4 @@ class ArtistaHeaderStrategy implements HeaderStrategy {
   }
 }
 
-export default ArtistaHeaderStrategy;
+export default AdministradorHeaderStrategy;
