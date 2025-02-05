@@ -69,7 +69,7 @@ export default function FormEstampado() {
   }, [servicio.diseño]);
 
   const toDB = () => {
-    fetch("http://localhost:4000/estampado", {
+    fetch("http://localhost:4000/producto", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(servicio),

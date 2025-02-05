@@ -5,7 +5,6 @@ class Carta {
   private img: string;
   private text: string;
   private price?: number;
-  private worker?: string;
   private style?: string;
   private cardBody: JSX.Element;
   private cardText: JSX.Element;
@@ -17,7 +16,6 @@ class Carta {
     this.img = "";
     this.text = "";
     this.price = undefined;
-    this.worker = undefined;
     this.style = undefined;
     this.cardBody = <></>;
     this.cardText = <></>;
@@ -26,11 +24,10 @@ class Carta {
     this.createCol = <></>;
   }
 
-  setPropiedades({ img, text, price, worker, style }: { img: string, text: string, price?: number, worker?: string, style?: string }) {
+  setPropiedades({ img, text, price, style }: { img: string, text: string, price?: number, style?: string }) {
     this.img = img;
     this.text = text;
     this.price = price;
-    this.worker = worker;
     this.style = style;
   }
 
@@ -39,7 +36,6 @@ class Carta {
       img: this.img,
       text: this.text,
       price: this.price,
-      worker: this.worker,
       style: this.style,
     };
   }
