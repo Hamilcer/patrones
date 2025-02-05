@@ -74,7 +74,7 @@ export default function FormEstampado() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(servicio),
     });
-    setTimeout(() => navigate("/catalogoservicios"), 200);
+    setTimeout(() => navigate("/catalogoServicios"), 200);
   };
 
   return (
