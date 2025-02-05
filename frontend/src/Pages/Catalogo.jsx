@@ -32,7 +32,6 @@ function Catalogo() {
         <Row className="width-100vw">
           <Header />
         </Row>
-
         <Row className="width-100vw">
           <Col xs={{ span: 8, offset: 2 }}>
             <Row width="100%" className=" p-5">
